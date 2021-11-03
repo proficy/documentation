@@ -17,7 +17,9 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 [**WHALEBOT**](#whalebot)  
   
 ## GENERAL  
+
 ![](pictures/general.jpg)  
+
 **Navigating the UI**  
 1.	In this area you can switch between the bots. Keep in mind, switching to another bot will quit all processes running in the current bot. If you want to run more than one bot at the same time, you have to start multiple instances.
 2.	Here you can switch to another instance if you want to run multiple instances of the same bot.  
@@ -38,6 +40,7 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 On first startup please fill the inputs, check Track Dev and press start. This will initiate your Bot Sniping Contract and allow you to use it. Once it returns a successfull transaction, you can restart the bot.  
 
 ![](pictures/mempool1.jpg)  
+
 ### **Tab General**
 **Purchase Amount:** The amount of BNB you want to spend on a snipe  
 **Contract Address:** The address of the token contract you want to snipe  
@@ -51,7 +54,9 @@ On first startup please fill the inputs, check Track Dev and press start. This w
 **Anti Snipe:** If this is checked, the blocks to wait method is activated. You can find the input in the settings tab.  
 **Anti maxTxAmount:** If this is checked, the bot will do split transactions. This applies both to buying and selling. This means you will do multiple buys/sells in one single tx. You can find the inputs in the settings tab. To make this work, you have to make sure the listing price and maxTxAmount inputs are correct and don’t exceed your purchase amount. The bot will do the math for you and let you know if something is wrong. Also consider to increase the Gaslimit significantly. If a contract is poorly designed, it might take up to 1mil Gaslimit to make a single buy call. This means if you want to do 10 buys in one single tx you’d need at least 10mil Gaslimit. (We can’t estimate the gaslimit for you if the contract has no liquidity pair on the router)  
 **Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
+
 ![](pictures/mempool2.jpg)  
+
 ### **Tab Settings** 
 **Take Profit:** The bot will sell all your token holdings once your profit target is reached. (in %) Set it to an unrealistically high value to only use trailing stop loss.  
 **Trailing Stop Loss:** The bot will sell all your token holdings once your stop loss target is reached. (in %) Set it to 100% to only use the take profit method. The bot will automatically track the current price-level for you. Example of this method: You set it to 30%. The token launches and hits it’s first ATH, it retraces by 20% and keeps going further up reaching a new ATH. If the price-level drops 30% or more below this ATH the bot will sell all your token holdings. NOTE: If you sniped on launch of a presale and people immediately dump, it will trigger the sell mechanism. So choose wisely when to use this.
@@ -61,14 +66,18 @@ On first startup please fill the inputs, check Track Dev and press start. This w
 **Listing Price:** The amount of tokens one gets for 1 BNB. You can find this on the presale page or if it is a fairlaunch you have to ask the devs for it. This value is only used for split transactions if Anti maxTxAmount is activated.  
 **Blocks to wait:** The amount of blocks the bot will wait until it snipes if Anti-Snipe is activated.  
 **PinkSale URL:** If the PinkSale checkbox is checked, the presale URL needs to be put in here.  
+
 ![](pictures/mempool3.jpg)  
+
 ### **Tab Anti Rug** 
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc.
 Usually the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
 **Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.  
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings. Don't set this too low because some contracts have different ways to interact with LP, which could trigger the sell mechanism.
 ## DXSALE/PINKSALE BOT
+
 ![](pictures/presale1.jpg)  
+
 ### **Tab General**  
 **DxSale Link or ID:** Simply paste the sale URL here or type in the sale ID.  
 **BNB Amount:** The amount of BNB you want to contribute per wallet.  
@@ -83,13 +92,17 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 **Sell All:** The Sell All button will sell all token holdings of all wallets.  
 **Claim:** If claim is checked, the bot will auto claim on all your wallets as soon as it is possible by using mempool techniques. If you forgot to check this, you can always use the claim button to manually claim.  
 **Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
+
 ![](pictures/presale2.jpg)   
+
 ### **Tab Anti-Rug**  
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc. Normally the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
 **Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.  
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings.  
 ## NFT BOT  
+
 ![](pictures/nftbot1.jpg)   
+
 ### **Tab General**  
 **Contract Address:** The contract address of the NFTs you want to snipe  
 **Dev Wallet Address:** If empty the bot will set the contract owner address as dev wallet address. In very rare occasions the bot can’t fetch it. If so it will alert you and you have to put the address in there manually.  
@@ -102,7 +115,9 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 **Balance Button:** This will show you all BNB balances on the amount of wallets you selected.  
 **upGas Button:** Sometimes on a mint the needed gas to successfully get your mint tx through increases drastically in the first few blocks. In the case you missed block 0 and ended up in block 1 with low GWEI you can resend all your sent txn with one click. It will directly take the GWEI and gaslimit from your inputs – so you need to change them on the fly before clicking the button.  
 **Cancel Button:** Sometimes on a mint the needed gas to successfully get your mint tx through increases drastically in the first few blocks. In the case you missed block 0 and ended up in block 1 with low GWEI you can cancel all your sent txn with one click if you like to.  
+
 ![](pictures/nftbot2.jpg)   
+
 ### **Tab Inputs**  
 **Enable Minting Function:** You need to fill this input with the function the contract owner will call to enable the public minting. This function could be named whatever the devs have in their mind. Typical names are unpause, saleOpen, startSale etc.  
 You can find this function in the contract. You have to copy the first line of the function without any semi-colons or brackets at the end. Also make sure you don’t add whitespaces at the beginning or at the end.  
@@ -115,7 +130,9 @@ If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTI
 **Presale Timer:** Sometimes devs decide to open the sale to the public after a timer runs out for presale mints. If this is the case you can find that timer in the contract or in the tx the contract owner started the presale with. If the checkbox presale timer is checked, the bot will snipe on the exact block the mint goes public after the timer ran out. The input format needs to be seconds.
 **Minting Dashboard URL:** This features is not yet available. If devs try to hide their NFT contract, we will fetch the contract address and it’s functions, even if it is unverified.  
 ## WHALEBOT  
+
 ![](pictures/whalebot.jpg)   
+
 **Purchase Amount:** Choose the amount of BNB you want to buy on every buy tx the selected whale makes. You can set this individually for every whale you track.  
 **Buy Trigger:** Choose the amount of BNB the whale has to buy for in order to trigger the bot to buy. You can set this individually for every whale you track.  
 **Sell Amount:** Choose the percentage of your token holdings you want to sell on every sell tx the selected whale makes. You can set this individually for every whale you track.  
