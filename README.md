@@ -120,7 +120,7 @@ The arguments need to be separated by commas, integers are typed in as they are 
 **Presale Timer:** Sometimes devs decide to open the sale to the public after a timer runs out for presale mints. If this is the case you can find that timer in the contract or in the tx the contract owner started the presale with. If the checkbox presale timer is checked, the bot will snipe on the exact block the mint goes public after the timer ran out.  
 **Minting Dashboard URL:** This features is not yet available. If devs try to hide their NFT contract, we will fetch the contract address and it’s functions, even if it is unverified.  
 ## WHALEBOT  
-![](pictures/whalebot.png)   
+![](pictures/whalebot.jpg)   
 **Purchase Amount:** Choose the amount of BNB you want to buy on every buy the selected whale makes. You can set this individually for every whale you track.  
 **Buy Trigger:** Choose the amount of BNB the whale has to buy for in order to trigger the bot to buy. 
 You can set this individually for every whale you track.  
