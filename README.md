@@ -1,4 +1,4 @@
-![](pictures/proficy_banner.jpg)
+![](pictures/proficy_banner.png)
 
 # Proficy Documentation
 Click on an app name below for a detailed description and instructions.
