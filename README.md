@@ -18,7 +18,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
   
 ## GENERAL  
 
-![](pictures/general.jpg)  
+![](pictures/Navigate.jpg)  
 
 **Navigating the UI**  
 1.	In this area you can switch between the bots. Keep in mind, switching to another bot will quit all processes running in the current bot. If you want to run more than one bot at the same time, you have to start multiple instances.
@@ -39,7 +39,7 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 
 On first startup please fill the inputs, check Track Dev and press start. This will initiate your Bot Sniping Contract and allow you to use it. Once it returns a successfull transaction, you can restart the bot.  
 
-![](pictures/mempool1.jpg)  
+![](pictures/Mempool_1.jpg)  
 
 ### **Tab General**
 **Purchase Amount:** The amount of BNB you want to spend on a snipe  
@@ -55,7 +55,7 @@ On first startup please fill the inputs, check Track Dev and press start. This w
 **Anti maxTxAmount:** If this is checked, the bot will do split transactions. This applies both to buying and selling. This means you will do multiple buys/sells in one single tx. You can find the inputs in the settings tab. To make this work, you have to make sure the listing price and maxTxAmount inputs are correct and don’t exceed your purchase amount. The bot will do the math for you and let you know if something is wrong. Also consider to increase the Gaslimit significantly. If a contract is poorly designed, it might take up to 1mil Gaslimit to make a single buy call. This means if you want to do 10 buys in one single tx you’d need at least 10mil Gaslimit. (We can’t estimate the gaslimit for you if the contract has no liquidity pair on the router)  
 **Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
 
-![](pictures/mempool2.jpg)  
+![](pictures/Mempool_2.jpg)  
 
 ### **Tab Settings** 
 **Take Profit:** The bot will sell all your token holdings once your profit target is reached. (in %) Set it to an unrealistically high value to only use trailing stop loss.  
@@ -67,7 +67,7 @@ On first startup please fill the inputs, check Track Dev and press start. This w
 **Blocks to wait:** The amount of blocks the bot will wait until it snipes if Anti-Snipe is activated.  
 **PinkSale URL:** If the PinkSale checkbox is checked, the presale URL needs to be put in here.  
 
-![](pictures/mempool3.jpg)  
+![](pictures/Mempool_3.jpg)  
 
 ### **Tab Anti Rug** 
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc.
@@ -76,7 +76,7 @@ Usually the devs shouldn’t tinker manually with the fees at all, so you could 
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings. Don't set this too low because some contracts have different ways to interact with LP, which could trigger the sell mechanism.
 ## DXSALE/PINKSALE BOT
 
-![](pictures/presale1.jpg)  
+![](pictures/pink_1.jpg)  
 
 **IMPORTANT: Please synchronize your system time before pressing start! Go to Time.is and check your offset. If needed, right click on your system time -> change date & time -> synchronize -> check your offset again\
 If you don't do this, you are likely to snipe too early or too late.**
@@ -96,7 +96,7 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 **Claim:** If claim is checked, the bot will auto claim on all your wallets as soon as it is possible by using mempool techniques. If you forgot to check this, you can always use the claim button to manually claim.  
 **Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
 
-![](pictures/presale2.jpg)   
+![](pictures/pink_2.jpg)   
 
 ### **Tab Anti-Rug**  
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc. Normally the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
@@ -104,7 +104,7 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings.  
 ## NFT BOT  
 
-![](pictures/nftbot1.jpg)   
+![](pictures/nftbot_1.jpg)   
 
 ### **Tab General**  
 **Contract Address:** The contract address of the NFTs you want to snipe  
@@ -119,7 +119,7 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 **upGas Button:** Sometimes on a mint the needed gas to successfully get your mint tx through increases drastically in the first few blocks. In the case you missed block 0 and ended up in block 1 with low GWEI you can resend all your sent txn with one click. It will directly take the GWEI and gaslimit from your inputs – so you need to change them on the fly before clicking the button.  
 **Cancel Button:** Sometimes on a mint the needed gas to successfully get your mint tx through increases drastically in the first few blocks. In the case you missed block 0 and ended up in block 1 with low GWEI you can cancel all your sent txn with one click if you like to.  
 
-![](pictures/nftbot2.jpg)   
+![](pictures/nftbot_2.jpg)   
 
 ### **Tab Inputs**  
 **Enable Minting Function:** You need to fill this input with the function the contract owner will call to enable the public minting. This function could be named whatever the devs have in their mind. Typical names are unpause, saleOpen, startSale etc.  
