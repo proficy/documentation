@@ -78,6 +78,9 @@ Usually the devs shouldn’t tinker manually with the fees at all, so you could 
 
 ![](pictures/presale1.jpg)  
 
+**IMPORTANT: Please synchronize your system time before pressing start! Go to Time.is and check your offset. If needed, right click on your system time -> change date & time -> synchronize -> check your offset again
+If you don't do this, you are likely to snipe too early or too late.**
+
 ### **Tab General**  
 **DxSale Link or ID:** Simply paste the sale URL here or type in the sale ID.  
 **BNB Amount:** The amount of BNB you want to contribute per wallet.  
