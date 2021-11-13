@@ -20,12 +20,12 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 
 ## CHANGELOG
 ### v1.0.2 2021-11-12
-* [Enhancement] Auto fetch sniper contract for Ultimate, Mempool, and Blockbot
 * [Enhancement] Updated Anti-Rug
-* [Bugfix] Prevent user from using not enough Gaslimit
-* [Bugfix] PinkSale URL is saved and form filled upon start on Mempool and Blockbots
+* [Enhancement] Auto fetch sniper contract (Mempool, Blockbot)
+* [Bugfix] Prevent user from using not enough Gaslimit (Mempool, Blockbot)
+* [Bugfix] PinkSale URL is saved and form filled upon start (Mempool, Blockbot)
 ### v1.0.1 2021-11-11
-* [Bugfix] Whalebot sell percentage calculation
+* [Bugfix] Fixed Sell percentage calculation (Whalebot)
 ### v1.0.0 2021-11-10
 * Proficy initial release
 
