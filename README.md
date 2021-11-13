@@ -20,13 +20,12 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 
 ## CHANGELOG
 ### v1.0.2 2021-11-12
-* [Enhancement] Auto fetch sniper contract for Ultimate, Mempool, and Blockbot Pro users
-* [Enhancement] Added a new anti rug tax function 
-* [Bugfix] Fixed an issue where the app would crash if gas limit wasn't high enough when buying
-* [Bugfix] Added ability to save PinkSale URL for Mempool Pro, Mempool High, and Blockbot Pro
-* [Bugfix] Fixed DxSale and PinkSale checkboxes not unchecking in Mempool Pro, Mempool High, and Blockbot Pro bots
+* [Enhancement] Auto fetch sniper contract for Ultimate, Mempool, and Blockbot
+* [Enhancement] Updated Anti-Rug
+* [Bugfix] Prevent user from using not enough Gaslimit
+* [Bugfix] PinkSale URL is saved and form filled upon start
 ### v1.0.1 2021-11-11
-* [Bugfix] Whalebot gas limit fixed
+* [Bugfix] Whalebot sell percentage calculation
 ### v1.0.0 2021-11-10
 * Proficy initial release
 
