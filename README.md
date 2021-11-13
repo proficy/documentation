@@ -15,6 +15,8 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 [**DXSALE/PINKSALE BOT**](#dxsalepinksale-bot)  
 [**NFT BOT**](#nft-bot)  
 [**WHALEBOT**](#whalebot)  
+[**CHANGELOG**](#changelog)  
+
   
 ## GENERAL  
 
@@ -141,6 +143,11 @@ If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTI
 **Sell Amount:** Choose the percentage of your token holdings you want to sell on every sell tx the selected whale makes. You can set this individually for every whale you track.  
 **Sell Trigger:** Choose the percentage of token holdings the whale has to sell in order to trigger the bot to sell. You can set this individually for every whale you track.  
 
+## CHANGELOG
+### v1.0.1 2021-11-11
+* [Bugfix] Whalebot gas limit fixed
+### v1.0.0 2021-11-10
+* Proficy initial release
 
 
 
