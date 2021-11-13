@@ -50,7 +50,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 ## MEMPOOL/BLOCKBOT
 The methods and inputs for the Mempool Bots and BlockBots are the same, so this section will cover both of them.  
 
-## On first startup please fill the inputs, check Track Dev and anti maxTxAmount and press start. This will initiate your Bot Sniping Contract and allow you to use it. Once it returns a successfull transaction, you can restart the bot.  
+# On first startup please fill the inputs, check Track Dev and anti maxTxAmount and press start. This will initiate your Bot Sniping Contract and allow you to use it. Once it returns a successfull transaction, you can restart the bot.  
 
 ![](pictures/Mempool_1.jpg)  
 
