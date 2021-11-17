@@ -19,6 +19,8 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
   
 
 ## CHANGELOG
+### v1.0.4 2021-11-17
+* [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
 ### v1.0.4 2021-11-15
 * [Bugfix] Fixed calculation to auto deposit WBNB to custom sniping smart contract (Mempool, Blockbot)
 * [Bugfix] Fixed an issue sniping liquidity addition on PinkSales (Mempool, Blockbot)
@@ -26,7 +28,6 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 * [Bugfix] Added auto approve for WBNB on custom sniping smart contracts (Mempool, Blockbot)
 * [Bugfix] Improved method to automatically pull ABIs from BscScan (all bots with anti-rug)
 * [Bugfix] Removed ability to resize window
-
 ### v1.0.2 2021-11-12
 * [Enhancement] Updated Anti-Rug
 * [Enhancement] Auto fetch sniper contract (Mempool, Blockbot)
