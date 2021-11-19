@@ -184,9 +184,9 @@ You might find something that looks like this:
 
 In this case the anti-snipe would be active for 3 blocks and you would have to aim at block 4. Why? Because "tradingActiveBlock + 2 >= block.Number" can be translated to: If block liquidity is added in plus 2 blocks are greater or equal than current blocknumber, antibot is active - so 3 blocks.
 
-block.Number = the current block
-tradingActiveBlock = the block liquidity is added in (First block to wait)
-+ 2 >= (another 2 blocks to wait)
+block.Number = the current block\
+tradingActiveBlock = the block liquidity is added in (First block to wait)\
++ 2 >= (another 2 blocks to wait)\
 
 If it would say "tradingActiveBlock + 2 > block.Number" it would be only 2 blocks with anti bot and you'd need to aim the bot at block 3.
 
