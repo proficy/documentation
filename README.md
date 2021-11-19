@@ -86,7 +86,7 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 **maxTxAmount:** The maximum amount of tokens that are allowed to be bought/sold in one call on this contract. You can find this value in the read functions of the contract. Simply copy paste it, the bot will format the value if it is multiplied by token decimals.  
 **Listing Price:** The amount of tokens one gets for 1 BNB. You can find this on the presale page or if it is a fairlaunch you have to ask the devs for it. This value is only used for split transactions if Anti maxTxAmount is activated.  
 **Block to aim at:** This is the block your bot aims to buy in ONLY WHEN ANTI-SNIPE IS ACTIVE. How to count: If there is a 2 block antibot measure in the contract, you want to aim at block 3. I.e. Block liquidity is added = 1 with antibot, next Block = 2 with antibot, next Block = 3 without antibot active.
-DO NOT SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.
+DO NOT SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.\
 **PinkSale URL:** If the PinkSale checkbox is checked, the presale URL needs to be put in here.  
 
 ![](pictures/Mempool_3.jpg)  
@@ -131,11 +131,11 @@ When using Metamask or Trustwallet the maximum txFee when sending BNB to a presa
 ### **Tab General**  
 **Contract Address:** The contract address of the NFTs you want to snipe  
 **Dev Wallet Address:** If empty the bot will set the contract owner address as dev wallet address. In very rare occasions the bot can’t fetch it. If so it will alert you and you have to put the address in there manually.  
-**NFT Amount per Tx:** Specify how many NFTs you want to mint in one tx when using multiple wallets. IF YOUR ARE USING BYPASS MAXMINT, PLEASE SET IT TO THE SAME VALUE AS MAXMINT!
+**NFT Amount per Tx:** Specify how many NFTs you want to mint in one tx when using multiple wallets. IF YOUR ARE USING BYPASS MAXMINT, PLEASE SET IT TO THE SAME VALUE AS MAXMINT!\
 **NFT Price:** The price for one NFT in BNB.  
 **Gasprice:** Only used when 1st Block Mode or Presale Timer Mode is active. Choose your GWEI to snipe when minting is enabled.  
-**Gaslimit:** Choose your gaslimit according to how many NFTs you want to mint per tx. On badly designed contracts one mint call can take up to 1mil in gas. So for 10 NFTs you’d need 10mil gaslimit. When using the bypass maxMint mode, you should set this to a very high value according to the amount of NFTs you want to snipe. (Don't exceed 50mil)
-**Anti maxMint:** This mode allows you to bypass the limited amount of NFTs you are usually allowed to mint in one tx. You can find the inputs in the maxMint tab.
+**Gaslimit:** Choose your gaslimit according to how many NFTs you want to mint per tx. On badly designed contracts one mint call can take up to 1mil in gas. So for 10 NFTs you’d need 10mil gaslimit. When using the bypass maxMint mode, you should set this to a very high value according to the amount of NFTs you want to snipe. (Don't exceed 50mil)\
+**Anti maxMint:** This mode allows you to bypass the limited amount of NFTs you are usually allowed to mint in one tx. You can find the inputs in the maxMint tab.\
 **1st Block Mode:** When this mode is active, you are not aiming at the same block as minting is enabled. This allows you to use higher GWEI. If this mode is inactive, the bot will snipe block 0 with fixed gwei because of the nature of mempool sniping. This can‘t be combined with anti maxMint or Presale Timer mode. (makes no sense)  
 **Balance Button:** This will show you all BNB balances on the amount of wallets you selected.  
 **upGas Button:** Sometimes on a mint the needed gas to successfully get your mint tx through increases drastically in the first few blocks. In the case you missed block 0 and ended up in block 1 with low GWEI you can resend all your sent txn with one click. It will directly take the GWEI and gaslimit from your inputs – so you need to change them on the fly before clicking the button.  
@@ -151,8 +151,8 @@ Example: function pause(bool val) public
 Example Mint Function: function mint(uint256 nftAmount, address _to) public  
 Example Mint Arguments: 10, "0x1234124121251251241233523523235235"  
 The arguments need to be separated by commas, integers are typed in as they are a and addresses have to inside quote marks. Make sure you put the arguments in the correct order. (same order as defined in the function)  
-If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTION ARGUMENT!
-**Presale Timer:** Sometimes devs decide to open the sale to the public after a timer runs out for presale mints. If this is the case you can find that timer in the contract or in the tx the contract owner started the presale with. If the checkbox presale timer is checked, the bot will snipe on the exact block the mint goes public after the timer ran out. The input format needs to be seconds.
+If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTION ARGUMENT!\
+**Presale Timer:** Sometimes devs decide to open the sale to the public after a timer runs out for presale mints. If this is the case you can find that timer in the contract or in the tx the contract owner started the presale with. If the checkbox presale timer is checked, the bot will snipe on the exact block the mint goes public after the timer ran out. The input format needs to be seconds.\
 **Minting Dashboard URL:** This features is not yet available. If devs try to hide their NFT contract, we will fetch the contract address and it’s functions, even if it is unverified.  
 ## WHALEBOT  
 
