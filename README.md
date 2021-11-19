@@ -205,6 +205,8 @@ Or like this:
 ![grafik](https://user-images.githubusercontent.com/89480206/142701936-82d83da8-fe2a-4828-9d04-fd81dbc79300.png)
 
 
+If it is block.Number the value you are looking for represents actual blocks. If it it block.timestamp, the value you are looking for is most likely in seconds. (1 block has 3 seconds on BSC)
+
 They are essentially all the same and are based on the same principle. All you need to do is find the value for the variable that defines how long the anti bot measure will be in place and do the math.
 
 This value can also be defined in a write function the contract owner can call. Since we expect you to only snipe verified contracts, you can simply go to the contract owner address and check shortly before launch if the owner calls any function that sets the antibot value. If you find a transaction that calls this function, open it, click on "click to see more" and grab the value from the transaction data input. (It's always the last few values of the input - Make sure to grab it from the correct input argument if there are more than one! Example: function setAntiBot(address _to, uint256 count) => transaction data input will have two lines, [0] and [1]. Since you obviously would want the value of count, you have to grab it from [1].
