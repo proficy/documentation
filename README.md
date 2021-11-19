@@ -186,7 +186,7 @@ In this case the anti-snipe would be active for 3 blocks and you would have to a
 
 "block.Number" = the current block\
 "tradingActiveBlock" = the block liquidity is added in (First block to wait)\
-"+ 2 >=" (another 2 blocks to wait)\
+"+ 2 >=" (another 2 blocks to wait)
 
 If it would say "tradingActiveBlock + 2 > block.Number" it would be only 2 blocks with anti bot and you'd need to aim the bot at block 3.
 
