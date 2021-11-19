@@ -163,9 +163,74 @@ If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTI
 **Sell Amount:** Choose the percentage of your token holdings you want to sell on every sell tx the selected whale makes. You can set this individually for every whale you track.  
 **Sell Trigger:** Choose the percentage of token holdings the whale has to sell in order to trigger the bot to sell. You can set this individually for every whale you track.  
 
+## ANTI-SNIPE
+
+In the following section we'll show you some examples of anti-bot measures on common contracts, how to spot them and how to bypass them.
+
+General understanding how those measures work:
+
+There are a few methods to trap people sniping a launch. It could be very high taxes, saving your address to a mapping and not allowing you to sell anymore, blocking any buys, blocking multiple buys per block - just to name a few.
+
+When looking at it from a technical side, it is always related to the transfer function. So with this in mind, if we don't find any noticable lines in the contract code, it is best practice to have a look at the transfer functions of the contract, to make sure there really is no antibot.
+
+The easiest and foremost way to spot anti-bot measures in a contract quickly, is by copying the contract from BSCScan to a text editor that supports solidity and search it by keywords. We recommend to use https://remix.ethereum.org or VS Code if you have it installed.
+
+Enter the search with CTRL + F and search for the following words: snipe, anti, launch, bot, block.
+
+You might find something that looks like this:
+
+![grafik](https://user-images.githubusercontent.com/89480206/142700663-9aa166c1-3aea-4ec8-8e99-fbbfbf1c5a09.png)
+
+In this case the anti-snipe would be active for 3 blocks and you would have to aim at block 4. Why? Because "tradingActiveBlock + 2 >= block.Number" can be translated to: If block liquidity is added in plus 2 blocks are greater or equal than current blocknumber, antibot is active - so 3 blocks.
+
+block.Number = the current block
+tradingActiveBlock = the block liquidity is added in (First block to wait)
++ 2 >= (another 2 blocks to wait)
+
+If it would say "tradingActiveBlock + 2 > block.Number" it would be only 2 blocks with anti bot and you'd need to aim the bot at block 3.
+
+This translates to: If block liquidity is added in plus 2 blocks is greater than current blocknumber, antibot is active - so 2 blocks.
+
+Be very careful with the " >= " and double check!
 
 
+You could also find something like this:
 
+![grafik](https://user-images.githubusercontent.com/89480206/142701852-834c04c1-936c-49b6-8e12-7821a77f608e.png)
+![grafik](https://user-images.githubusercontent.com/89480206/142701895-3ae65096-06fc-485c-b35c-c2c30861ddc6.png)
+
+Or like this:
+
+![grafik](https://user-images.githubusercontent.com/89480206/142701936-82d83da8-fe2a-4828-9d04-fd81dbc79300.png)
+
+
+They are essentially all the same and are based on the same principle. All you need to do is find the value for the variable that defines how long the anti bot measure will be in place and do the math.
+
+This value can also be defined in a write function the contract owner can call. Since we expect you to only snipe verified contracts, you can simply go to the contract owner address and check shortly before launch if the owner calls any function that sets the antibot value. If you find a transaction that calls this function, open it, click on "click to see more" and grab the value from the transaction data input. (It's always the last few values of the input - Make sure to grab it from the correct input argument if there are more than one! Example: function setAntiBot(address _to, uint256 count) => transaction data input will have two lines, [0] and [1]. Since you obviously would want the value of count, you have to grab it from [1].
+If it is a value bigger than 9, it will be in hex. So copy/paste it to a hex/decimal converter to get the value.
+
+Some devs choose to give the variables or functions uncommon names. If you spot anything irregular, that doesn't look like a standard variable or function, check what it does.
+
+If you spot anything that looks like this:
+
+![grafik](https://user-images.githubusercontent.com/89480206/142702633-c5ab5b76-6eb2-4e29-99ac-a649ce5da9b1.png)
+
+Check where the interface is leading to. In this case the interface antiSnipe is leading to an unverified contract, through which the devs can set the anti bot specific values. Please just stay away from these. We can't disclose any further.
+
+If the interface is part of the same contract, just check the functions it contains and wait for the contract owner to call them.
+
+One more exceptional example:
+
+![grafik](https://user-images.githubusercontent.com/89480206/142702849-907fd687-644a-41ae-899b-ebe00d54f6a3.png)
+
+If you spot something like this, you are not able to use bypass maxTxAmount. The only way to bypass this, would be by using multiple wallets while sniping.
+
+And of course, always check maxTxAmount and maxWallet on the contracts you want to snipe. 
+
+The easiest way to check if your maxTxAmount values in the bot are correct, is to fill the input without decimals. So if a token has 9 decimals and the maxTxAmount is displayed with way too many zeros, remove 9 zeros to get the actual token amount. If it is 18, remove 18 zeros and so on.
+As a result you should get a reasonable amount of tokens for maxTxAmount in relation to the listing price.
+
+Don't get caught!
 
 
 
