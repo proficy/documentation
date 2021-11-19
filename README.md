@@ -51,15 +51,15 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 6.	In this area you can find additional features.
 
 ### **IMPORTANT:** 
+- The wallet and private key inputs are separated for each bot. 
 -	On first start-up fill in the forms (especially your wallet information) and press SAVE. The last saved data will be used to fill the forms on the next start/restart of the app.
 -	After switching to another node, press SAVE and RESTART to use the new settings.
 -	DO NOT CLICK THE START BUTTON ANYMORE ONCE YOU'VE CLICKED IT! You would run the same script multiple times, which would lead to interference and poor performance/double buying.
+-	If you are done with sniping on Mempool or Blockbots and don't have antiRug or sell-methods running, PLEASE PRESS RESTART BEFORE USING THE MANUAL SELL OR BUY BUTTONS. Otherwise unpredictable behaviour will occur. (we are on it to make this not necessary)
 -	After starting the main process via the START button, any input changes made later on will not take effect on the currently running main process. The new inputs would only be availabe for certain features like "cancelTx" and "upGas" in the NFT bot. If you want to make changes to the inputs used in the main function, press RESTART and fill in your new inputs.  
 
 ## MEMPOOL/BLOCKBOT
 The methods and inputs for the Mempool Bots and BlockBots are the same, so this section will cover both of them.  
-
-# On first startup please fill the inputs, check Track Dev and anti maxTxAmount and press start. This will initiate your Bot Sniping Contract and allow you to use it. Once it returns a successfull transaction, you can restart the bot.  
 
 ![](pictures/Mempool_1.jpg)  
 
@@ -67,13 +67,12 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 **Purchase Amount:** The amount of BNB you want to spend on a snipe  
 **Contract Address:** The address of the token contract you want to snipe  
 **Dev Wallet Address:** This should be left empty. If there is input in this field before pressing START, it will override any of the following. If DxSale and PinkSale are not checked, the bot will use the contract owner address as dev wallet address. If DxSale or PinkSale is checked, the bot will fetch the presale owner address. In rare occasions the bot can’t find the owner address on a fairlaunched contract. In this case it will throw an error and ask you to put the owner address in there manually.  
-**Contract Bot Address:** Put your sniping contract address in here. After successfully minting a Mempool or BlockBot NFT, the minting dashboard will automatically return your personal sniping contract address. Otherwise you can always query the read function 19 on the according NFT contract by putting in your NFT tokenID to obtain the address.  
 **Track Dev:** This method will track the dev wallet and tries to buy everytime the dev wallet makes a move. The most important usecase of this is for launches on which the devs already added liquidity but disabled trading. With this method you can snipe on any launch. It can be combined with any of the following methods, besides Snipe Liquidity.  
 **Snipe Liquidity:** This method will only snipe if liquidity is added. It can be used on fairlaunches, DxSale launches and PinkSale launches. It can be combined with any of the following methods.  
 **DxSale:** If this is checked, the presale owner address is used as dev wallet address. Leave the dev wallet address input empty.  
 **PinkSale:** If this is checked, the presale owner address is used as dev wallet address. Leave the dev wallet address input empty. In order to make this work you have to put the PinkSale URL in the according input in the settings tab.  
 **Sell Methods:** If this is checked, the trailing stop loss and take profit methods are activated. You can find the inputs in the settings tab.  
-**Anti Snipe:** If this is checked, the blocks to wait method is activated. You can find the input in the settings tab.  
+**Anti Snipe:** If this is checked, the block to aim at is activated. You can find the input in the settings tab.  
 **Anti maxTxAmount:** If this is checked, the bot will do split transactions. This applies both to buying and selling. This means you will do multiple buys/sells in one single tx. You can find the inputs in the settings tab. To make this work, you have to make sure the listing price and maxTxAmount inputs are correct and don’t exceed your purchase amount. The bot will do the math for you and let you know if something is wrong. Also consider to increase the Gaslimit significantly. If a contract is poorly designed, it might take up to 1mil Gaslimit to make a single buy call. This means if you want to do 10 buys in one single tx you’d need at least 10mil Gaslimit. (We can’t estimate the gaslimit for you if the contract has no liquidity pair on the router)  
 **Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
 
@@ -86,7 +85,8 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 **Gaslimit:** This value will be used for all your transactions.  
 **maxTxAmount:** The maximum amount of tokens that are allowed to be bought/sold in one call on this contract. You can find this value in the read functions of the contract. Simply copy paste it, the bot will format the value if it is multiplied by token decimals.  
 **Listing Price:** The amount of tokens one gets for 1 BNB. You can find this on the presale page or if it is a fairlaunch you have to ask the devs for it. This value is only used for split transactions if Anti maxTxAmount is activated.  
-**Blocks to wait:** The amount of blocks the bot will wait until it snipes if Anti-Snipe is activated.  
+**Block to aim at:** This is the block your bot aims to buy in ONLY WHEN ANTI-SNIPE IS ACTIVE. How to count: If there is a 2 block antibot measure in the contract, you want to aim at block 3. I.e. Block liquidity is added = 1 with antibot, next Block = 2 with antibot, next Block = 3 without antibot active.
+DO NOT SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.
 **PinkSale URL:** If the PinkSale checkbox is checked, the presale URL needs to be put in here.  
 
 ![](pictures/Mempool_3.jpg)  
