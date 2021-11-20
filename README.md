@@ -15,7 +15,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 [**DXSALE/PINKSALE BOT**](#dxsalepinksale-bot)  
 [**NFT BOT**](#nft-bot)  
 [**WHALEBOT**](#whalebot)  
-[**ANTI-SNIPE**](#anti-snipe) 
+[**ANTI-SNIPE**](#anti-snipe)  
 [**CHANGELOG**](#changelog)  
 
 
