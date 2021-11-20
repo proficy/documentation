@@ -19,29 +19,6 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 [**ANTI-SNIPE**](#anti-snipe) 
   
 
-## CHANGELOG
-### v1.0.4 2021-11-17
-* [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
-
-### v1.0.4 2021-11-17
-* [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
-### v1.0.4 2021-11-15
-* [Bugfix] Fixed calculation to auto deposit WBNB to custom sniping smart contract (Mempool, Blockbot)
-* [Bugfix] Fixed an issue sniping liquidity addition on PinkSales (Mempool, Blockbot)
-### v1.0.3 2021-11-14
-* [Bugfix] Added auto approve for WBNB on custom sniping smart contracts (Mempool, Blockbot)
-* [Bugfix] Improved method to automatically pull ABIs from BscScan (all bots with anti-rug)
-* [Bugfix] Removed ability to resize window
-### v1.0.2 2021-11-12
-* [Enhancement] Updated Anti-Rug
-* [Enhancement] Auto fetch sniper contract (Mempool, Blockbot)
-* [Bugfix] Prevent user from using not enough Gaslimit (Mempool, Blockbot)
-* [Bugfix] PinkSale URL is saved and form filled upon start (Mempool, Blockbot)
-### v1.0.1 2021-11-11
-* [Bugfix] Fixed Sell percentage calculation (Whalebot)
-### v1.0.0 2021-11-10
-* Proficy initial release
-
 ## GENERAL  
 
 ![](pictures/Navigate.jpg)  
@@ -55,7 +32,8 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 6.	In this area you can find additional features.
 
 ### **IMPORTANT:** 
-- The wallet and private key inputs are separated for each bot. 
+- The wallet and private key inputs are separated for each bot.  
+- Your private key is different from your seed phrase. Follow these instructions to export your private key for use in the Proficy app: https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key.
 -	On first start-up fill in the forms (especially your wallet information) and press SAVE. The last saved data will be used to fill the forms on the next start/restart of the app.
 -	After switching to another node, press SAVE and RESTART to use the new settings.
 -	DO NOT CLICK THE START BUTTON ANYMORE ONCE YOU'VE CLICKED IT! You would run the same script multiple times, which would lead to interference and poor performance/double buying.
@@ -239,6 +217,28 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 Don't get caught!
 
 
+## CHANGELOG
+### v1.0.4 2021-11-17
+* [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
+
+### v1.0.4 2021-11-17
+* [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
+### v1.0.4 2021-11-15
+* [Bugfix] Fixed calculation to auto deposit WBNB to custom sniping smart contract (Mempool, Blockbot)
+* [Bugfix] Fixed an issue sniping liquidity addition on PinkSales (Mempool, Blockbot)
+### v1.0.3 2021-11-14
+* [Bugfix] Added auto approve for WBNB on custom sniping smart contracts (Mempool, Blockbot)
+* [Bugfix] Improved method to automatically pull ABIs from BscScan (all bots with anti-rug)
+* [Bugfix] Removed ability to resize window
+### v1.0.2 2021-11-12
+* [Enhancement] Updated Anti-Rug
+* [Enhancement] Auto fetch sniper contract (Mempool, Blockbot)
+* [Bugfix] Prevent user from using not enough Gaslimit (Mempool, Blockbot)
+* [Bugfix] PinkSale URL is saved and form filled upon start (Mempool, Blockbot)
+### v1.0.1 2021-11-11
+* [Bugfix] Fixed Sell percentage calculation (Whalebot)
+### v1.0.0 2021-11-10
+* Proficy initial release
 
 
 
