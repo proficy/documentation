@@ -21,6 +21,9 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 
 ## CHANGELOG
 ### v1.0.4 2021-11-17
+* [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
+
+### v1.0.4 2021-11-17
 * [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
 ### v1.0.4 2021-11-15
 * [Bugfix] Fixed calculation to auto deposit WBNB to custom sniping smart contract (Mempool, Blockbot)
