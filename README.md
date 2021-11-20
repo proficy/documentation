@@ -10,14 +10,14 @@ We explcitly recommend **NOT TO USE YOUR MAIN WALLET** for any of our bots or to
 We at PROFICY took every available measure to prevent anything bad to happen on our end.  
 
 ## TABLE OF CONTENTS
-[**CHANGELOG**](#changelog)  
 [**GENERAL**](#general)  
 [**MEMPOOL/BLOCKBOT**](#mempoolblockbot)  
 [**DXSALE/PINKSALE BOT**](#dxsalepinksale-bot)  
 [**NFT BOT**](#nft-bot)  
 [**WHALEBOT**](#whalebot)  
 [**ANTI-SNIPE**](#anti-snipe) 
-  
+[**CHANGELOG**](#changelog)  
+
 
 ## GENERAL  
 
