@@ -92,7 +92,7 @@ If you don't do this, you are likely to snipe too early or too late.**
 **Number of Wallets:** The amount of wallets you want to snipe on this presale.  
 **Gas Price:** The amount of GWEI you want to use on a public presale. If you are on a whitelist, the bot will automatically detect this and use a low Gasprice. Also when a whitelisted presale switches to public without delay timer, the bot will use very low GWEI since it uses mempool techniques to snipe.
 Be aware you have to set this for each wallet separately. In order to not be detected as a bot, please vary your inputs even if it is just by a few GWEI.  
-**Gas Limit:** The Gas limit you want to use on your snipe. Usually not more than 140k are necessary to contribute to a presale.
+**Gas Limit:** The Gas limit you want to use on your snipe. Usually not more than 140k are necessary to contribute to a DxSale presale. PinkSale requires gas limits higher than 250k to avoid running out of gas errors.
 When using Metamask or Trustwallet the maximum txFee when sending BNB to a presale token address is 1BNB. If you use our nodes you can exceed this value by whatever you like, although it’s 99% of the time not necessary.  
 **Time Delay:** The amount of time the bot will send your tx before a public presale starts. Since every user has a different location and thus a different delay, we need this input. 4 seconds has worked consistently for us, but you might have to dial it in. (decimals are allowed)  
 **Sell Initial at Profit:** If Sell Initial is checked, the bot will sell your initial contribution of all wallets together at your chosen target. You can also use the Sell Initial button to sell your initial at any given point.  
