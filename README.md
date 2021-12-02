@@ -39,6 +39,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 -	DO NOT CLICK THE START BUTTON ANYMORE ONCE YOU'VE CLICKED IT! You would run the same script multiple times, which would lead to interference and poor performance/double buying.
 -	If you are done with sniping on Mempool or Blockbots and don't have antiRug or sell-methods running, PLEASE PRESS RESTART BEFORE USING THE MANUAL SELL OR BUY BUTTONS. Otherwise unpredictable behaviour will occur. (we are on it to make this not necessary)
 -	After starting the main process via the START button, any input changes made later on will not take effect on the currently running main process. The new inputs would only be availabe for certain features like "cancelTx" and "upGas" in the NFT bot. If you want to make changes to the inputs used in the main function, press RESTART and fill in your new inputs.  
+-	Make sure your computer sleep settings are off if you're letting the app run for long periods of time unattended.  
 
 ## MEMPOOL/BLOCKBOT
 The methods and inputs for the Mempool Bots and BlockBots are the same, so this section will cover both of them.  
