@@ -219,9 +219,15 @@ Don't get caught!
 
 
 ## CHANGELOG
+### v1.1.5 2021-12-4
+* [Enhancement] Allow empty inputs if you're not using a sniping feature (Mempool, Blockbot)
+* [Enhancement] Automatically increase gas for anti max tx amount to prevent out of gas errors (Mempool, Blockbot)
+* [Enhancement] Automatically trim extra spaces from inputs and allow special characters like commas (All)
+* [Feature] Added Unicrypt presale sniper 
+* [Bugfix] Fixed a token limit calculation that affected anti max tx amount
+
 ### v1.0.4 2021-11-17
 * [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
-
 ### v1.0.4 2021-11-17
 * [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
 ### v1.0.4 2021-11-15
