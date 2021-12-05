@@ -223,7 +223,7 @@ Don't get caught!
 * [Bugfix] Fetch correct contract address from etherscan (ETH NFT Bot)
 * [Bugfix] Fixed NFT issue (Mempool High)
 * [Enhancement] Added a new anti rug function (Mempool, Blockbot, Presale)
-* [Bugfix] Prevent app from crashing when an unverified contract is found
+* [Bugfix] Prevent app from crashing when an unverified contract is found (Mempool, Blockbot, Presale)
 * [Bugfix] Fixed manual selling issue (Mempool, Blockbot)
 
 ### v1.1.5 2021-12-4
