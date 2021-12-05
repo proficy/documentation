@@ -219,12 +219,19 @@ Don't get caught!
 
 
 ## CHANGELOG
+### v1.1.6 2021-12-5
+* [Bugfix] Fetch correct contract address from etherscan (ETH NFT Bot)
+* [Bugfix] Fixed NFT issue (Mempool High)
+* [Enhancement] Added a new anti rug function (Mempool, Blockbot, Presale)
+* [Bugfix] Prevent app from crashing when an unverified contract is found
+* [Bugfix] Fixed manual selling issue (Mempool, Blockbot)
+
 ### v1.1.5 2021-12-4
 * [Enhancement] Allow empty inputs if you're not using a sniping feature (Mempool, Blockbot)
 * [Enhancement] Automatically increase gas for anti max tx amount to prevent out of gas errors (Mempool, Blockbot)
 * [Enhancement] Automatically trim extra spaces from inputs and allow special characters like commas (All)
-* [Feature] Added Unicrypt presale sniper 
-* [Bugfix] Fixed a token limit calculation that affected anti max tx amount
+* [Feature] Added Unicrypt presale sniper (Unicrypt)
+* [Bugfix] Fixed a token limit calculation that affected anti max tx amount (Mempool, Blockbot)
 
 ### v1.0.4 2021-11-17
 * [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
