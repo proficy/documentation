@@ -219,6 +219,10 @@ Don't get caught!
 
 
 ## CHANGELOG
+### v1.1.7 2021-12-7
+* [Enhancement] Detect start block change and allow users to choose block time delay before buying (Unicrypt)
+* [Bugfix] Fixed an issue where certain PinkSale links would cause the app to crash (Mempool, Blockbot, PinkSale)
+
 ### v1.1.6 2021-12-5
 * [Bugfix] Fetch correct contract address from etherscan (ETH NFT Bot)
 * [Bugfix] Fixed NFT issue (Mempool High)
