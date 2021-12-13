@@ -12,7 +12,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 ## TABLE OF CONTENTS
 [**GENERAL**](#general)  
 [**MEMPOOL/BLOCKBOT**](#mempoolblockbot)  
-[**DXSALE/PINKSALE BOT**](#dxsalepinksale-bot)  
+[**DXSALE/PINKSALE/UNICRYPT BOT**](#dxsalepinksaleunicrypt-bot)  
 [**NFT BOT**](#nft-bot)  
 [**WHALEBOT**](#whalebot)  
 [**ANTI-SNIPE**](#anti-snipe)  
@@ -79,7 +79,7 @@ DO NOT SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.
 Usually the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
 **Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.  
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings. Don't set this too low because some contracts have different ways to interact with LP, which could trigger the sell mechanism.
-## DXSALE/PINKSALE BOT
+## DXSALE/PINKSALE/UNICRYPT BOT
 
 ![](pictures/pink_1.jpg)  
 
@@ -87,14 +87,15 @@ Usually the devs shouldn’t tinker manually with the fees at all, so you could 
 If you don't do this, you are likely to snipe too early or too late.**
 
 ### **Tab General**  
-**DxSale Link or ID:** Simply paste the sale URL here or type in the sale ID.  
+**PinkSale/DxSale/Unicrypt Link or ID:** Simply paste the sale URL here or type in the sale ID.  
 **BNB Amount:** The amount of BNB you want to contribute per wallet.  
 **Number of Wallets:** The amount of wallets you want to snipe on this presale.  
 **Gas Price:** The amount of GWEI you want to use on a public presale. If you are on a whitelist, the bot will automatically detect this and use a low Gasprice. Also when a whitelisted presale switches to public without delay timer, the bot will use very low GWEI since it uses mempool techniques to snipe.
 Be aware you have to set this for each wallet separately. In order to not be detected as a bot, please vary your inputs even if it is just by a few GWEI.  
 **Gas Limit:** The Gas limit you want to use on your snipe. Usually not more than 140k are necessary to contribute to a DxSale presale. PinkSale requires gas limits higher than 250k to avoid running out of gas errors.
 When using Metamask or Trustwallet the maximum txFee when sending BNB to a presale token address is 1BNB. If you use our nodes you can exceed this value by whatever you like, although it’s 99% of the time not necessary.  
-**Time Delay:** The amount of time the bot will send your tx before a public presale starts. Since every user has a different location and thus a different delay, we need this input. 4 seconds has worked consistently for us, but you might have to dial it in. (decimals are allowed)  
+**Time Delay:** The amount of time the bot will send your tx before a public presale starts. Since every user has a different location and thus a different delay, we need this input. 4 seconds has worked consistently for us, but you might have to dial it in. (decimals are allowed). Time delay is similar for Unicrypt, but is based on time before the startBlock to send the contribution.  
+**Changed Start Block Gas Price**  (Unicrypt only) Sometimes a dev will change the start block of a Unicrypt presale as an anti bot measure. Most people won't catch this and you can often get in the presale with much lower gas since we automatically detect if they change the start block.  
 **Sell Initial at Profit:** If Sell Initial is checked, the bot will sell your initial contribution of all wallets together at your chosen target. You can also use the Sell Initial button to sell your initial at any given point.  
 **Sell One:** The Sell One button will sell all token holdings of the currently at the bottom displayed wallet.  
 **Sell All:** The Sell All button will sell all token holdings of all wallets.  
