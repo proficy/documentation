@@ -42,7 +42,7 @@ We at PROFICY took every available measure to prevent anything bad to happen on 
 -	Make sure your computer sleep settings are off if you're letting the app run for long periods of time unattended.  
 
 ## MEMPOOL/BLOCKBOT
-The methods and inputs for the Mempool Bots and BlockBots are the same, so this section will cover both of them.  
+The methods and inputs for the Mempool Bots and BlockBots are mostly the same, some features are only available on the mempool bots and marked as such.  
 
 ![](pictures/Mempool_1.jpg)  
 
@@ -55,9 +55,12 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 **DxSale:** If this is checked, the presale owner address is used as dev wallet address. Leave the dev wallet address input empty.  
 **PinkSale:** If this is checked, the presale owner address is used as dev wallet address. Leave the dev wallet address input empty. In order to make this work you have to put the PinkSale URL in the according input in the settings tab.  
 **Sell Methods:** If this is checked, the trailing stop loss and take profit methods are activated. You can find the inputs in the settings tab.  
-**Anti Snipe:** If this is checked, the block to aim at is activated. You can find the input in the settings tab.  
 **Anti maxTxAmount:** If this is checked, the bot will do split transactions. This applies both to buying and selling. This means you will do multiple buys/sells in one single tx. You can find the inputs in the settings tab. To make this work, you have to make sure the listing price and maxTxAmount inputs are correct and don’t exceed your purchase amount. The bot will do the math for you and let you know if something is wrong. Also consider to increase the Gaslimit significantly. If a contract is poorly designed, it might take up to 1mil Gaslimit to make a single buy call. This means if you want to do 10 buys in one single tx you’d need at least 10mil Gaslimit. (We can’t estimate the gaslimit for you if the contract has no liquidity pair on the router)  
-**Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount or disable trading. You can find the according inputs in the anti rug tab.  
+**Anti Rug:** If this is checked, the anti rug methods are active. This means the bot will automatically frontrun the dev’s tx when they change the txFee, maxTxAmount, disable trading or try to blacklist your wallet. You can find the according inputs in the anti rug tab.  
+**Track Function (Mempool only):** This function is only of use, if liquidity is already added! It allows you to track one specific function that has to be called by the contract owner, in order to enable trading. The bot will present you a selection of available functions in the dropdown menu below. It is obviously only available in Track Dev mode. It can be used on its own or combined with Manual AntiSnipe - on Automatic AnitSnipe in Track Dev Mode it is mandatory.
+**Manual AntiSnipe:** If this is checked, the "block to aim at" mode is activated. You can find the input in the settings tab. Since V2 your transaction will revert if you set up the bot wrong and would try to snipe a block in which AntiBot measures are still in place, in order to protect you from losing money.
+**Auto AntiSnipe (Mempool version):** If this is checked, the bot will detect the first block without AntiBot measures automatically. You have to specify an amount of blocks the bot should test, before it stops testing each block for entry and a maximum total txFee you are willing to accept to make the bot snipe. If the bot made a successful snipe, it will stop the process by itself. These methods are happening on-chain, to guarantee you the fasted possible automatic snipe, which means they come with a cost - gas fees for tested blocks mainly. Note: This is supposed to be used on tokens with AntiBot measures, thus it will start sniping in block 1, not block 0! Once the Proficy Node Network is in place, it will start with block 0. If a token has no AntiBot measures and allows you to snipe block 0, there is no need for Automatic AntiSnipe.
+**Auto AntiSnipe (Blockbot version):** If this is checked, the bot will detect the first block without AntiBot measures automatically. You have to specify an amount of blocks the bot should test, before it stops testing each block for entry. If the bot made a successful snipe, it will stop the process by itself. These methods are happening off-chain, which means they won't cost you any gasfees, but come with the usual delay of 1 block on blockbot.
 
 ![](pictures/Mempool_2.jpg)  
 
@@ -66,19 +69,22 @@ The methods and inputs for the Mempool Bots and BlockBots are the same, so this 
 **Trailing Stop Loss:** The bot will sell all your token holdings once your stop loss target is reached. (in %) Set it to 100% to only use the take profit method. The bot will automatically track the current price-level for you. Example of this method: You set it to 30%. The token launches and hits it’s first ATH, it retraces by 20% and keeps going further up reaching a new ATH. If the price-level drops 30% or more below this ATH the bot will sell all your token holdings. NOTE: If you sniped on launch of a presale and people immediately dump, it will trigger the sell mechanism. So choose wisely when to use this.\
 **Gasprice:** This value is only used for buys if you activated the Anti Snipe method and for all sell methods. It is also used for the normal buy/sell buttons.  
 **Gaslimit:** This value will be used for all your transactions.  
-**maxTxAmount:** The maximum amount of tokens that are allowed to be bought/sold in one call on this contract. You can find this value in the read functions of the contract. Simply copy paste it, the bot will format the value if it is multiplied by token decimals.  
-**Listing Price:** The amount of tokens one gets for 1 BNB. You can find this on the presale page or if it is a fairlaunch you have to ask the devs for it. This value is only used for split transactions if Anti maxTxAmount is activated.  
-**Block to aim at:** This is the block your bot aims to buy in ONLY WHEN ANTI-SNIPE IS ACTIVE. How to count: If there is a 2 block antibot measure in the contract, you want to aim at block 2. This may sound confusing. Explanation: Using Anti-Snipe methods when there are no antibot measures in place makes no sense. It means you would aim at block 0 or block 1 depending on if you start counting at 0 or 1. We start counting at 0, which means THE BLOCK LIQUIDITY IS ADDED IN IS BLOCK 0! So in our example: Block liquidity is added = block 0 with antibot, next block = block 1 with antibot, next block = block 2 without antibot active.
-DO NOT SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.\
 **PinkSale URL:** If the PinkSale checkbox is checked, the presale URL needs to be put in here.  
 
 ![](pictures/Mempool_3.jpg)  
 
-### **Tab Anti Rug** 
+### **Tab Anti** 
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc.
 Usually the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
 **Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.  
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings. Don't set this too low because some contracts have different ways to interact with LP, which could trigger the sell mechanism.
+**Max total txFee allowed:** The maximum fee allowed in total (buy + sell) to let the bot snipe. We recommend 70 as default value. If you'd set it f.e. to 100% and during AntiBot measures there is a 90% buyFee but a standard 8% sellFee, the bot would snipe into such a block with antiBot measures. If you set it to 50% and a token has (for whatever reason) a buyFee of 30% and a sellFee of 30%, the bot wouldn't snipe at all.
+**Amount of blocks to test:** This is the amount of blocks the bot will test for AntiBot measures, before it stops if it couldn't detect a safe block. Keep in mind, on mempool bots this process is happening on-chain and thus each tested block comes with the cost of gasfees.
+**Block to aim at:** This is the block your bot aims to buy in ONLY WHEN MANUAL ANTISNIPE IS ACTIVE. How to count: If there is a 2 block antibot measure in the contract, you want to aim at block 2. This may sound confusing. Explanation: Using Anti-Snipe methods when there are no antibot measures in place makes no sense. It means you would aim at block 0 or block 1 depending on if you start counting at 0 or 1. We start counting at 0, which means THE BLOCK LIQUIDITY IS ADDED IN IS BLOCK 0! So in our example: Block liquidity is added = block 0 with antibot, next block = block 1 with antibot, next block = block 2 without antibot active.
+DO NOT TRY TO SET THIS VALUE TO ZERO AND ACTIVATE ANTI-SNIPE! This would make no sense.\
+**maxTxAmount:** The maximum amount of tokens that are allowed to be bought/sold in one call on this contract. You can find this value in the read functions of the contract. Simply copy paste it, the bot will format the value if it is multiplied by token decimals.  
+**Listing Price:** The amount of tokens one gets for 1 BNB. You can find this on the presale page or if it is a fairlaunch you have to ask the devs for it. This value is only used for split transactions if Anti maxTxAmount is activated.  
+
 ## DXSALE/PINKSALE/UNICRYPT BOT
 
 ![](pictures/pink_1.jpg)  
@@ -146,6 +152,10 @@ If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTI
 **Buy Trigger:** Choose the amount of BNB the whale has to buy for in order to trigger the bot to buy. You can set this individually for every whale you track.  
 **Sell Amount:** Choose the percentage of your token holdings you want to sell on every sell tx the selected whale makes. You can set this individually for every whale you track.  
 **Sell Trigger:** Choose the percentage of token holdings the whale has to sell in order to trigger the bot to sell. You can set this individually for every whale you track.  
+**Special MethodID:** This will allow you to track bots/whales that use custom smart contracts to buy/snipe on tokens. Simply put the methodID the tracked wallet uses to buy tokens in here. Example Input: 0x225c1d65 (MethodIDs of Proficy bots are excluded!)
+**Active Checkbox:** If checked, the bot will track the selected whale.
+**Sound on Checkbox:** If checked, the bot will notify you when it has frontrun a whale.
+**Allow unverified:** If this is not checked, the bot will check BEFORE frontrunning if a contract is verified and only buy if so. The bot, our nodes and our methods themselves are more than fast enough to consistently frontrun tx although we check if a contract is verified inbetween. Nevertheless, BSCscan is affected by network lags, node syncing issues, maintenance etc., which results in poor response performance. If this is the case, this will lead to buying after the whale if you choose to only allow verified contracts under such conditions.
 
 ## ANTI-SNIPE
 
