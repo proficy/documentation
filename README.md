@@ -228,8 +228,25 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 
 Don't get caught!
 
-
 ## CHANGELOG
+### v2.0.0 2021-12-27
+* [Feature] Added AutoSnipe method to Mempool Bots and Blockbot
+* [Feature] Added SafeSnipe method to Mempool Bots and Blockbot
+* [Feature] Added Track Function mode to Mempool Bots and Blockbot
+* [Feature] Added tracking bots/wallets by methodID on Whalebot
+* [Feature] Added wallet drain protection (anti spamming, anti high gwei, anti rebuy) on Whalebot
+* [Feature] Added Honeypot check on Whalebot
+* [Feature] Added verified check on Whalebot
+* [Feature] Added randomized gwei on Whalebot to disguise the user more
+* [Feature] Added checkbox to activate/deactivate tracking a whale
+* [Enhancement] Completely new sniping contracts
+* [Enhancement] Improved performance & resource usage of UI
+* [Enhancement] Improved performance of txPool scanning
+* [Enhancement] Improved Anti-Rug methods
+* [Enhancement] General code improvement, making it more lightweight
+* [Enhancement] Removed lower tiers and upgraded low tier users to higher tier (PinkDouble & WhaleSingle)
+* [Bugfix] Fixed issue with terminal rendering, resulting in offset of cursor
+
 ### v1.1.7 2021-12-7
 * [Enhancement] Detect start block change and allow users to choose block time delay before buying (Unicrypt)
 * [Bugfix] Fixed an issue where certain PinkSale links would cause the app to crash (Mempool, Blockbot, PinkSale)
