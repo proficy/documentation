@@ -252,35 +252,35 @@ Don't get caught!
 * [Bugfix] Fixed an issue where certain PinkSale links would cause the app to crash (Mempool, Blockbot, PinkSale)
 
 ### v1.1.6 2021-12-5
+* [Enhancement] Improved anti rug function (Mempool, Blockbot, Presale)
 * [Bugfix] Fetch correct contract address from etherscan (ETH NFT Bot)
 * [Bugfix] Fixed NFT issue (Mempool High)
-* [Enhancement] Added a new anti rug function (Mempool, Blockbot, Presale)
 * [Bugfix] Prevent app from crashing when an unverified contract is found (Mempool, Blockbot, Presale)
 * [Bugfix] Fixed manual selling issue (Mempool, Blockbot)
 
 ### v1.1.5 2021-12-4
+* [New Bot] Added Unicrypt presale sniper (Unicrypt)
 * [Enhancement] Allow empty inputs if you're not using a sniping feature (Mempool, Blockbot)
 * [Enhancement] Automatically increase gas for anti max tx amount to prevent out of gas errors (Mempool, Blockbot)
 * [Enhancement] Automatically trim extra spaces from inputs and allow special characters like commas (All)
-* [Feature] Added Unicrypt presale sniper (Unicrypt)
 * [Bugfix] Fixed a token limit calculation that affected anti max tx amount (Mempool, Blockbot)
 
 ### v1.0.4 2021-11-17
-* [Bugfix] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
+* [Enhancement] Added more explicit language for "blocks to aim at." (Mempool, Blockbot)
 ### v1.0.4 2021-11-17
 * [Bugfix] Fixed a bug affecting auto fetching sniper contract (Mempool, Blockbot)
 ### v1.0.4 2021-11-15
-* [Bugfix] Fixed calculation to auto deposit WBNB to custom sniping smart contract (Mempool, Blockbot)
+* [Bugfix] Fixed calculation to auto deposit WBNB (Mempool, Blockbot)
 * [Bugfix] Fixed an issue sniping liquidity addition on PinkSales (Mempool, Blockbot)
 ### v1.0.3 2021-11-14
-* [Bugfix] Added auto approve for WBNB on custom sniping smart contracts (Mempool, Blockbot)
-* [Bugfix] Improved method to automatically pull ABIs from BscScan (all bots with anti-rug)
+* [Enhancement] Added auto approve for WBNB on custom sniping smart contracts (Mempool, Blockbot)
+* [Enhancement] Improved method to automatically pull ABIs from BscScan (all bots with anti-rug)
 * [Bugfix] Removed ability to resize window
 ### v1.0.2 2021-11-12
 * [Enhancement] Updated Anti-Rug
 * [Enhancement] Auto fetch sniper contract (Mempool, Blockbot)
-* [Bugfix] Prevent user from using not enough Gaslimit (Mempool, Blockbot)
-* [Bugfix] PinkSale URL is saved and form filled upon start (Mempool, Blockbot)
+* [Enhancement] Prevent user from using not enough Gaslimit (Mempool, Blockbot)
+* [Enhancement] PinkSale URL is saved and form filled upon start (Mempool, Blockbot)
 ### v1.0.1 2021-11-11
 * [Bugfix] Fixed Sell percentage calculation (Whalebot)
 ### v1.0.0 2021-11-10
