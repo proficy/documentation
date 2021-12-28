@@ -76,7 +76,7 @@ The methods and inputs for the Mempool Bots and BlockBots are mostly the same, s
 ### **Tab Anti** 
 **Max txFee allowed:** The maximum txFee the devs can set any of the fees to before the bot sells all your token holdings. Smart scammers do it in multiple steps by adding up liquidity fee, tax fee etc.
 Usually the devs shouldn’t tinker manually with the fees at all, so you could set a fairly low value to trigger your sells.  
-**Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.
+**Min txAmount allowed:** The minimum amount of tokens the devs can set maxTxAmount to before the bot will sell all your token holdings.\
 **Liquidity Removal:** The percentage of LP the devs can remove, before the bot will sell all your token holdings. Don't set this too low because some contracts have different ways to interact with LP, which could trigger the sell mechanism.\
 **Max total txFee allowed:** The maximum fee allowed in total (buy + sell) to let the bot snipe. We recommend 70 as default value. If you'd set it f.e. to 100% and during AntiBot measures there is a 90% buyFee but a standard 8% sellFee, the bot would snipe into such a block with antiBot measures. If you set it to 50% and a token has (for whatever reason) a buyFee of 30% and a sellFee of 30%, the bot wouldn't snipe at all.\
 **Amount of blocks to test:** This is the amount of blocks the bot will test for AntiBot measures, before it stops if it couldn't detect a safe block. Keep in mind, on mempool bots this process is happening on-chain and thus each tested block comes with the cost of gasfees.\
@@ -151,10 +151,10 @@ If there are no mint arguments, leave it empty. NOTE: THE NFT PRICE IS NO FUNCTI
 **Purchase Amount:** Choose the amount of BNB you want to buy on every buy tx the selected whale makes. You can set this individually for every whale you track.  
 **Buy Trigger:** Choose the amount of BNB the whale has to buy for in order to trigger the bot to buy. You can set this individually for every whale you track.  
 **Sell Amount:** Choose the percentage of your token holdings you want to sell on every sell tx the selected whale makes. You can set this individually for every whale you track.  
-**Sell Trigger:** Choose the percentage of token holdings the whale has to sell in order to trigger the bot to sell. You can set this individually for every whale you track.  
-**Special MethodID:** This will allow you to track bots/whales that use custom smart contracts to buy/snipe on tokens. Simply put the methodID the tracked wallet uses to buy tokens in here. The methodID will be tracked additionally to the standard ones. Example Input: 0x225c1d65 (MethodIDs of Proficy bots are excluded!)
-**Active Checkbox:** If checked, the bot will track the selected whale.
-**Sound on Checkbox:** If checked, the bot will notify you when it has frontrun a whale.
+**Sell Trigger:** Choose the percentage of token holdings the whale has to sell in order to trigger the bot to sell. You can set this individually for every whale you track.\
+**Special MethodID:** This will allow you to track bots/whales that use custom smart contracts to buy/snipe on tokens. Simply put the methodID the tracked wallet uses to buy tokens in here. The methodID will be tracked additionally to the standard ones. Example Input: 0x225c1d65 (MethodIDs of Proficy bots are excluded!)\
+**Active Checkbox:** If checked, the bot will track the selected whale.\
+**Sound on Checkbox:** If checked, the bot will notify you when it has frontrun a whale.\
 **Allow unverified:** If this is not checked, the bot will check BEFORE frontrunning if a contract is verified and only buy if so. The bot, our nodes and our methods themselves are more than fast enough to consistently frontrun tx although we check if a contract is verified inbetween. Nevertheless, BSCscan is affected by network lags, node syncing issues, maintenance etc., which results in poor response performance. If this is the case, this will lead to buying after the whale if you choose to only allow verified contracts under such conditions.
 
 ## ANTI-SNIPE
