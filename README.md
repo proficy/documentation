@@ -232,7 +232,7 @@ Don't get caught!
 ### v2.0.0 2021-12-27
 * [Feature] Added AutoSnipe method to Mempool Bots and Blockbot
 * [Feature] Added SafeSnipe method to Mempool Bots and Blockbot
-* [Feature] Added Track Function mode to Mempool Bots and Blockbot
+* [Feature] Added Track Function mode to Mempool Bots
 * [Feature] Added tracking bots/wallets by methodID on Whalebot
 * [Feature] Added wallet drain protection (anti spamming, anti high gwei, anti rebuy) on Whalebot
 * [Feature] Added Honeypot check on Whalebot
