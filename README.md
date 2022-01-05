@@ -229,6 +229,10 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 Don't get caught!
 
 ## CHANGELOG
+### v2.0.2 2022-01-05
+* [Bugfix] Fixed crashing issues (Whalebot)
+* [Bugfix] Added buy and sell tax output to auto snipe (Blockbot)
+* 
 ### v2.0.1 2022-01-03
 * [Bugfix] Fixed crashing when Anti Rug checked (Mempool, Blockbot)
 * [Bugfix] Optimized code (Whalebot)
