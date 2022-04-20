@@ -229,7 +229,11 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 Don't get caught!
 
 ## CHANGELOG
-### v2.0.2 2022-01-05
+### v2.0.4 2022-04-19
+* [Enhancement] Fix sniping on PinkSale's updated contracts (Pinkbot)
+* [Bugfix] Fix crashing issues on all bots
+
+### v2.0.3 2022-01-05
 * [Feature] Copy whale deadline to avoid buying if a whale uses a negative deadline (Whalebot)
 
 ### v2.0.2 2022-01-05
