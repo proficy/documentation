@@ -229,8 +229,12 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 Don't get caught!
 
 ## CHANGELOG
+### v2.1.5 2022-04-24
+* [Feature] Add R0 and BUSD presale sniping (Unicrypt)
+* [Bugfix] Fix sniping PinkSales (Mempool, Blockbot)
+
 ### v2.0.4 2022-04-19
-* [Enhancement] Fix sniping on PinkSale's updated contracts (Pinkbot)
+* [Bugfix] Fix sniping on PinkSale's updated contracts (Pinkbot)
 * [Bugfix] Fix crashing issues on all bots
 
 ### v2.0.3 2022-01-05
