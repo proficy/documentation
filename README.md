@@ -229,6 +229,9 @@ As a result you should get a reasonable amount of tokens for maxTxAmount in rela
 Don't get caught!
 
 ## CHANGELOG
+### v2.1.7 2022-05-03
+* [Feature] Add Australian node (All)
+
 ### v2.1.6 2022-04-24
 * [Bugfix] Add track function to manual anti-snipe (Mempool)
 
